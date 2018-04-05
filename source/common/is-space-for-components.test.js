@@ -1,4 +1,4 @@
-import isSpaceForComponent from "./is-space-for-component"
+import isSpaceForComponents from "./is-space-for-components"
 
 describe("source/common/should-add-component.js", () => {
 
@@ -10,7 +10,7 @@ describe("source/common/should-add-component.js", () => {
       }
     }
 
-    expect(isSpaceForComponent(mockRobot, 1)).toBe(true)
+    expect(isSpaceForComponents(mockRobot, 1)).toBe(true)
   })
 
   test("should return false when robot does not have space for one component", () => {
@@ -21,7 +21,7 @@ describe("source/common/should-add-component.js", () => {
       }
     }
 
-    expect(isSpaceForComponent(mockRobot, 1)).toBe(false)
+    expect(isSpaceForComponents(mockRobot, 1)).toBe(false)
   })
 
   test("should return false when robot does not have enough space for two components", () => {
@@ -32,7 +32,7 @@ describe("source/common/should-add-component.js", () => {
       }
     }
 
-    expect(isSpaceForComponent(mockRobot, 2)).toBe(false)
+    expect(isSpaceForComponents(mockRobot, 2)).toBe(false)
   })
 
 })

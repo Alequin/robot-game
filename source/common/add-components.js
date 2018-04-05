@@ -2,6 +2,7 @@ import reduce from "lodash/reduce"
 import flow from "lodash/flow"
 
 import resetStats from "./reset-stats"
+import isSpaceForComponents from "./is-space-for-components"
 
 import {
   WEAPON, ARMOUR,
@@ -12,18 +13,12 @@ import {
 
 function addComponents(robot, componentsToAdd){
   const {chassy: {components, componentCapacity}} = robot
-  const addComponents = shouldAddComponent(components, componentsToAdd, componentCapacity)
 
-  robot.chassy.components = addComponents ?
-    [...components, ...componentsToAdd]
-    : components
+  robot.chassy.components = isSpaceForComponents(robot, componentsToAdd.length) ?
+  [...components, ...componentsToAdd]
+  : components
 
   return setRobotStats(robot)
-}
-
-function shouldAddComponent(currentComponents, componentsToAdd, componentCapacity){
-  const newTotalLength = componentsToAdd.length + currentComponents.length
-  return newTotalLength <= componentCapacity
 }
 
 const setRobotStats = flow(
