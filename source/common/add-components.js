@@ -1,6 +1,7 @@
 import reduce from "lodash/reduce"
 import flow from "lodash/flow"
-import mapValues from "lodash/mapValues"
+
+import resetStats from "./reset-stats"
 
 import {
   WEAPON, ARMOUR,
@@ -17,7 +18,7 @@ function addComponents(robot, componentsToAdd){
     [...components, ...componentsToAdd]
     : components
 
-  return {addedComponents: addComponents, robot: setRobotStats(robot)}
+  return setRobotStats(robot)
 }
 
 function shouldAddComponent(currentComponents, componentsToAdd, componentCapacity){
@@ -26,22 +27,9 @@ function shouldAddComponent(currentComponents, componentsToAdd, componentCapacit
 }
 
 const setRobotStats = flow(
-  resetAllStats,
-  applyBaseWeight,
+  resetStats,
   applyComponents
 )
-
-function resetAllStats(robot){
-  const {chassy: {stats}} = robot
-  robot.chassy.stats = mapValues(stats, () => 0)
-  return robot
-}
-
-function applyBaseWeight(robot){
-  const {chassy} = robot
-  chassy.stats.totalWeight = chassy.stats.totalWeight + chassy.baseWeight
-  return robot
-}
 
 function applyComponents(robot){
   const {components, stats} = robot.chassy

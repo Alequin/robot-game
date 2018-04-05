@@ -1,7 +1,7 @@
 
-function isSpaceForComponent(robot){
+function isSpaceForComponents(robot, count){
   const {chassy: {components, componentCapacity}} = robot
-  return components.length < componentCapacity
+  return components.length+count <= componentCapacity
 }
 
-export default isSpaceForComponent
+export default isSpaceForComponents

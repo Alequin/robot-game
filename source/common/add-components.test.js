@@ -40,29 +40,26 @@ describe("source/robot/util/addComponents.js", () => {
 
     test("Can add a component to a robot", () => {
       const expected = [mockArmour]
-      const {addedComponents, robot} = addComponents(mockRobot, [mockArmour])
-      expect(addedComponents).toEqual(true)
+      const robot = addComponents(mockRobot, [mockArmour])
       expect(robot.chassy.components).toEqual(expected)
     })
 
     test("Can add multiple components to a robot", () => {
       const expected = [mockArmour, mockArmour1]
-      const {addedComponents, robot} = addComponents(mockRobot, [mockArmour, mockArmour1])
-      expect(addedComponents).toEqual(true)
+      const robot = addComponents(mockRobot, [mockArmour, mockArmour1])
       expect(robot.chassy.components).toEqual(expected)
     })
 
     test("Cannot add multple component to a robot if the capacity is passed", () => {
       const expected = []
       const componentsToAdd = [mockArmour,mockArmour,mockArmour,mockArmour,mockArmour]
-      const {addedComponents, robot} = addComponents(mockRobot, componentsToAdd)
-      expect(addedComponents).toEqual(false)
+      const robot = addComponents(mockRobot, componentsToAdd)
       expect(robot.chassy.components).toEqual(expected)
     })
 
     describe("When components are added the robots stats are changes accordingly", () => {
       test("Adding armour increases armour and total weight", () => {
-        const {addedComponents, robot: {chassy}} = addComponents(mockRobot, [mockArmour])
+        const {chassy} = addComponents(mockRobot, [mockArmour])
         expect(chassy.stats.armour).toEqual(100)
         expect(chassy.stats.totalWeight).toEqual(55)
       })
@@ -108,16 +105,14 @@ describe("source/robot/util/addComponents.js", () => {
 
     test("it appends new components to the robot when adding", () => {
       const expected = [mockArmour, mockWeapon]
-      const {addedComponents, robot} = addComponents(mockRobot, [mockWeapon])
-      expect(addedComponents).toEqual(true)
+      const robot = addComponents(mockRobot, [mockWeapon])
       expect(robot.chassy.components).toEqual(expected)
     })
 
     test("adding additional components will cause stats to increase correctly", () => {
       const expected = [mockArmour, mockWeapon]
-      const {addedComponents, robot} = addComponents(mockRobot, [mockWeapon])
-      expect(addedComponents).toEqual(true)
-      expect(robot.chassy.components).toEqual(expected)
+      const {chassy} = addComponents(mockRobot, [mockWeapon])
+      expect(chassy.stats.totalWeight).toEqual(85)
     })
   })
 })
