@@ -60,6 +60,11 @@ const statModifiersByType = {
       totalWeight: stats.totalWeight + armour.weight,
       armour: stats.armour + armour.durability
     })
+  },
+  [WEAPON]: (stats, weapon) => {
+    return Object.assign(stats, {
+      totalWeight: stats.totalWeight + weapon.weight
+    })
   }
 }
 

@@ -1,5 +1,5 @@
 import addComponents from "./add-components"
-import {ARMOUR} from "./component-types"
+import {ARMOUR, WEAPON} from "./component-types"
 
 describe("source/robot/util/addComponents.js", () => {
 
@@ -60,7 +60,7 @@ describe("source/robot/util/addComponents.js", () => {
       expect(robot.chassy.components).toEqual(expected)
     })
 
-    describe("When component is added the robots stats are changes accordingly", () => {
+    describe("When components are added the robots stats are changes accordingly", () => {
       test("Adding armour increases armour and total weight", () => {
         const {addedComponents, robot: {chassy}} = addComponents(mockRobot, [mockArmour])
         expect(chassy.stats.armour).toEqual(100)
@@ -74,7 +74,7 @@ describe("source/robot/util/addComponents.js", () => {
 
     let mockRobot
     let mockArmour
-    let mockArmour1
+    let mockWeapon
 
     beforeEach(() => {
       mockArmour = {
@@ -83,10 +83,10 @@ describe("source/robot/util/addComponents.js", () => {
         weight: 5
       }
 
-      mockArmour1 = {
-        type: ARMOUR,
-        durability: 500,
-        weight: 20
+      mockWeapon = {
+        id: 1,
+        type: WEAPON,
+        weight: 30,
       }
 
       mockRobot = {
@@ -107,8 +107,15 @@ describe("source/robot/util/addComponents.js", () => {
     })
 
     test("it appends new components to the robot when adding", () => {
-      const expected = [mockArmour, mockArmour1]
-      const {addedComponents, robot} = addComponents(mockRobot, [mockArmour1])
+      const expected = [mockArmour, mockWeapon]
+      const {addedComponents, robot} = addComponents(mockRobot, [mockWeapon])
+      expect(addedComponents).toEqual(true)
+      expect(robot.chassy.components).toEqual(expected)
+    })
+
+    test("adding additional components will cause stats to increase correctly", () => {
+      const expected = [mockArmour, mockWeapon]
+      const {addedComponents, robot} = addComponents(mockRobot, [mockWeapon])
       expect(addedComponents).toEqual(true)
       expect(robot.chassy.components).toEqual(expected)
     })
