@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack --config webpack.config.js -w",
-    "test": "jest"
+    "start": "npm run build && node dist/index.js",
+    "test": "jest",
+    "remove:dist": "rm -rf dist/",
+    "build:server": "babel ./source/server --out-dir dist/server --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,*.test.js --copy-files",   
+    "build:common": "babel ./source/common --out-dir dist/common --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,*.test.js --copy-files",
+    "build": "npm run remove:dist && npm run build:common && npm run build:server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-loader": "^7.1.4",
     "css-loader": "^0.28.10",
+    "express": "^4.16.3",
+    "jest-cli": "^22.4.3",
     "node-sass": "^4.8.3",
     "npm": "^5.8.0",
     "react": "^16.3.0",
@@ -24,6 +30,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "jest": "^22.4.3",
     "webpack-cli": "^2.0.10"
   }
