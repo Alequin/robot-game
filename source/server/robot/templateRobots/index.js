@@ -1,5 +1,6 @@
 import chassis from "./../components/chassis"
 import weapons from "./../components/weapons"
+import armours from "./../components/armours"
 
 import {findById} from "./../util/find"
 import addComponents from "./../../../common/add-components"
@@ -22,6 +23,13 @@ const robots = [
     description: "A small fighting robot",
     chassy: findById(chassis, 1),
     components: [findById(weapons, 1)]
+  }),
+  newRobot({
+    id: 2,
+    name: "Armour Robot",
+    description: "A small fighting robot with armout",
+    chassy: findById(chassis, 1),
+    components: [findById(weapons, 1), findById(armours, 1)]
   })
 ]
 

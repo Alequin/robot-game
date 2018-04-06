@@ -51,10 +51,9 @@ describe("source/robot/util/addComponents.js", () => {
     })
 
     test("Cannot add multple component to a robot if the capacity is passed", () => {
-      const expected = []
       const componentsToAdd = [mockArmour,mockArmour,mockArmour,mockArmour,mockArmour]
-      const robot = addComponents(mockRobot, componentsToAdd)
-      expect(robot.chassy.components).toEqual(expected)
+      const actual  = () => addComponents(mockRobot, componentsToAdd)
+      expect(actual).toThrow()
     })
 
     describe("When components are added the robots stats are changes accordingly", () => {

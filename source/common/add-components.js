@@ -13,11 +13,10 @@ import {
 
 function addComponents(robot, componentsToAdd){
   const {chassy: {components, componentCapacity}} = robot
-
-  robot.chassy.components = isSpaceForComponents(robot, componentsToAdd.length) ?
-  [...components, ...componentsToAdd]
-  : components
-
+  if(!isSpaceForComponents(robot, componentsToAdd.length)) {
+    throw overCapacityError(componentCapacity)
+  }
+  robot.chassy.components = [...components, ...componentsToAdd]
   return setRobotStats(robot)
 }
 
@@ -49,6 +48,10 @@ const statModifiersByType = {
       totalWeight: stats.totalWeight + weapon.weight
     })
   }
+}
+
+function overCapacityError(componentCapacity){
+  return new Error(`Cannot add more components that the chassy can support: Max(${componentCapacity})`)
 }
 
 export default addComponents
