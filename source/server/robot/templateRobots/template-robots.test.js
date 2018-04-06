@@ -1,7 +1,7 @@
 import templateRobots from "./index"
 
 describe("source/robot/template-robots/index.js", () => {
-  test("All templateRobots should have a id", () => {
+  test("All templateRobots should have an id", () => {
     templateRobots.forEach((templateRobot) => {
       expect(templateRobot).toHaveProperty("id")
     })
