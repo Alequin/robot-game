@@ -1,7 +1,6 @@
-import stats from "./stats"
-import newStats from "./new-stats"
+import {stats, newStats} from "./index"
 
-describe("source/server/robot/components/stats/new-stats.js", () => {
+describe("source/server/robot/components/stats/stats.js", () => {
   test("Should return a blank slate stats object when no inital values are given", () => {
     const expected = {
       [stats.ARMOUR]: 0,

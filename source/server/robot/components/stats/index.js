@@ -1,6 +1,13 @@
-import stats from "./stats"
+export const stats = Object.freeze({
+    ARMOUR: "Armour",
+    SHIELD: "Shield",
+    WEIGHT: "Weight",
+    AGILITY: "Agility",
+    BATTERY_CHARGE_RATE: "Battery charge rate",
+    BATTERY_CAPACITY: "Battery capacity"
+})
 
-function newStats(initalStats = {}){
+export const newStats = (initalStats = {}) => {
 
   const {
     [stats.ARMOUR]: armour,
@@ -21,4 +28,4 @@ function newStats(initalStats = {}){
   }
 }
 
-export default newStats
+export default stats

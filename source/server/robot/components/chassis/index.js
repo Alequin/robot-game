@@ -1,5 +1,4 @@
-import stats from "./../stats/stats"
-import newStats from "./../stats/new-stats"
+import {stats, newStats} from "./../stats"
 
 const chassis = [
   newChassy({
