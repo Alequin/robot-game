@@ -27,24 +27,9 @@ describe("source/robot/components/shields/index.js", () => {
       expect(shield).toHaveProperty("durability")
     })
   })
-  test("All shields should have a weight", () => {
+  test("All shields should have stats", () => {
     shields.forEach((shield) => {
-      expect(shield).toHaveProperty("weight")
-    })
-  })
-  test("All shields should have a capacity", () => {
-    shields.forEach((shield) => {
-      expect(shield).toHaveProperty("capacity")
-    })
-  })
-  test("All shields should have a recharge rate", () => {
-    shields.forEach((shield) => {
-      expect(shield.recharge).toHaveProperty("rate")
-    })
-  })
-  test("All shields should have a recharge efficency", () => {
-    shields.forEach((shield) => {
-      expect(shield.recharge).toHaveProperty("efficency")
+      expect(shield).toHaveProperty("stats")
     })
   })
 })

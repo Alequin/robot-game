@@ -1,19 +1,18 @@
-
-import {SHIELD} from "./../../../../common/component-types"
+import * as type from "./../../../../common/component-types"
+import {stats, newStats} from "./../stats"
 
 const shields = [
   {
     id: 1,
-    type: SHIELD,
+    type: type.SHIELD,
     name: "Simple Shield",
     description: "A basic energy shield",
     durability: 100,
-    weight: 10,
-    capacity: 100,
-    recharge: {
-      rate: 10,
-      efficency: 1
-    }
+    stats: newStats({
+      [stats.SHIELD_CAPACITY]: 100,
+      [stats.SHIELD_CHARGE_RATE]: 10,
+      [stats.SHIELD_EFFICIENCY]: 2,
+    })
   }
 ]
 
