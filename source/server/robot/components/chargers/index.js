@@ -9,7 +9,8 @@ const chargers = [
     description: "A small basic charger",
     durability: 100,
     stats: newStats({
-      [stats.BATTERY_CHARGE_RATE]: 5
+      [stats.BATTERY_CHARGE_RATE]: 10,
+      [stats.BATTERY_EFFICIENCY]: 2
     })
   }
 ]
