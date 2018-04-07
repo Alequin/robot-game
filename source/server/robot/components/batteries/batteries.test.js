@@ -1,5 +1,5 @@
 import batteries from "./index"
-import {BATTERY} from "./../../../../common/component-types"
+import type from "./../../../../common/component-types"
 
 describe("source/robot/components/batteries/index.js", () => {
   test("All batteries should have an id", () => {
@@ -9,7 +9,7 @@ describe("source/robot/components/batteries/index.js", () => {
   })
   test("All batteries should have a type equal to BATTERY", () => {
     batteries.forEach((battery) => {
-      expect(battery.type).toEqual(BATTERY)
+      expect(battery.type).toEqual(type.BATTERY)
     })
   })
   test("All batteries should have a name", () => {

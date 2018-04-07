@@ -4,12 +4,7 @@ import flow from "lodash/flow"
 import resetStats from "./reset-stats"
 import isSpaceForComponents from "./is-space-for-components"
 
-import {
-  WEAPON, ARMOUR,
-  SHIELD, CHASSY,
-  WHEELS, BATTERY,
-  CHARGER
-} from "./component-types"
+import type from "./component-types"
 
 function addComponents(robot, componentsToAdd){
   const {chassy: {components, componentCapacity}} = robot
@@ -37,13 +32,13 @@ function statModifier(stats, component){
 }
 
 const statModifiersByType = {
-  [ARMOUR]: (stats, armour) => {
+  [type.ARMOUR]: (stats, armour) => {
     return Object.assign(stats, {
       totalWeight: stats.totalWeight + armour.weight,
       armour: stats.armour + armour.durability
     })
   },
-  [WEAPON]: (stats, weapon) => {
+  [type.WEAPON]: (stats, weapon) => {
     return Object.assign(stats, {
       totalWeight: stats.totalWeight + weapon.weight
     })

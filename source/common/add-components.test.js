@@ -1,5 +1,5 @@
 import addComponents from "./add-components"
-import {ARMOUR, WEAPON} from "./component-types"
+import type from "./component-types"
 
 describe("source/robot/util/addComponents.js", () => {
 
@@ -26,13 +26,13 @@ describe("source/robot/util/addComponents.js", () => {
       }
 
       mockArmour = {
-        type: ARMOUR,
+        type: type.ARMOUR,
         durability: 100,
         weight: 5
       }
 
       mockArmour1 = {
-        type: ARMOUR,
+        type: type.ARMOUR,
         durability: 500,
         weight: 20
       }
@@ -74,14 +74,14 @@ describe("source/robot/util/addComponents.js", () => {
 
     beforeEach(() => {
       mockArmour = {
-        type: ARMOUR,
+        type: type.ARMOUR,
         durability: 100,
         weight: 5
       }
 
       mockWeapon = {
         id: 1,
-        type: WEAPON,
+        type: type.WEAPON,
         weight: 30,
       }
 

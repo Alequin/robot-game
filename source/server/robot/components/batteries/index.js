@@ -1,4 +1,4 @@
-import * as type from "./../../../../common/component-types"
+import type from "./../../../../common/component-types"
 import {stats, newStats} from "./../stats"
 
 const battery = [

@@ -1,5 +1,5 @@
 import shields from "./index"
-import {SHIELD} from "./../../../../common/component-types"
+import type from "./../../../../common/component-types"
 
 describe("source/robot/components/shields/index.js", () => {
   test("All shields should have an id", () => {
@@ -9,7 +9,7 @@ describe("source/robot/components/shields/index.js", () => {
   })
   test("All shields should have a type equal to SHIELD", () => {
     shields.forEach((shield) => {
-      expect(shield.type).toEqual(SHIELD)
+      expect(shield.type).toEqual(type.SHIELD)
     })
   })
   test("All shields should have a name", () => {

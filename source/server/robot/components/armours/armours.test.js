@@ -1,5 +1,5 @@
 import armours from "./index"
-import * as type from "./../../../../common/component-types"
+import type from "./../../../../common/component-types"
 
 describe("source/robot/components/armours/index.js", () => {
   test("All armours should have an id", () => {

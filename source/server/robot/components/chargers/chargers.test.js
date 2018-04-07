@@ -1,5 +1,5 @@
 import chargers from "./index"
-import {CHARGER} from "./../../../../common/component-types"
+import type from "./../../../../common/component-types"
 
 describe("source/robot/components/chargers/index.js", () => {
   test("All chargers should have an id", () => {
@@ -9,7 +9,7 @@ describe("source/robot/components/chargers/index.js", () => {
   })
   test("All chargers should have a type equal to CHARGER", () => {
     chargers.forEach((charger) => {
-      expect(charger.type).toEqual(CHARGER)
+      expect(charger.type).toEqual(type.CHARGER)
     })
   })
   test("All chargers should have a name", () => {

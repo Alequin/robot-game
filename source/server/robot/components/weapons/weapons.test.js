@@ -1,5 +1,5 @@
 import weapons from "./index"
-import * as type from "./../../../../common/component-types"
+import type from "./../../../../common/component-types"
 
 describe('source/robot/components/weapons/index.js', () => {
   test("All weapons should have an id", () => {

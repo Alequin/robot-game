@@ -1,5 +1,4 @@
 import chassis from "./index"
-import {CHASSY} from "./../../../../common/component-types"
 
 describe("source/robot/components/chassies/index.js", () => {
   test("All chassis should have an id", () => {
