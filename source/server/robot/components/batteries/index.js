@@ -1,13 +1,16 @@
-import {BATTERY} from "./../../../../common/component-types"
+import * as type from "./../../../../common/component-types"
+import {stats, newStats} from "./../stats"
 
 const battery = [
   {
     id: 1,
-    type: BATTERY,
+    type: type.BATTERY,
     name: "Small Battery",
     description: "A basic battery",
     durability: 100,
-    capacity: 100
+    stats: newStats({
+      [stats.BATTERY_CAPACITY]: 150
+    })
   }
 ]
 

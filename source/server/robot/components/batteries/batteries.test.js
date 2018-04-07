@@ -27,9 +27,9 @@ describe("source/robot/components/batteries/index.js", () => {
       expect(battery).toHaveProperty("durability")
     })
   })
-  test("All batteries should have a capacity", () => {
+  test("All batteries should have stats", () => {
     batteries.forEach((battery) => {
-      expect(battery).toHaveProperty("capacity")
+      expect(battery).toHaveProperty("stats")
     })
   })
 })

@@ -1,16 +1,16 @@
-import {CHARGER} from "./../../../../common/component-types"
+import * as type from "./../../../../common/component-types"
+import {stats, newStats} from "./../stats"
 
 const chargers = [
   {
     id: 1,
-    type: CHARGER,
+    type: type.CHARGER,
     name: "Small Solar Panel",
     description: "A small basic charger",
     durability: 100,
-    recharge:{
-      rate: 1,
-      efficency: 1
-    }
+    stats: newStats({
+      [stats.BATTERY_CHARGE_RATE]: 5
+    })
   }
 ]
 

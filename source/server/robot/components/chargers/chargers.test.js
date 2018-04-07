@@ -27,14 +27,10 @@ describe("source/robot/components/chargers/index.js", () => {
       expect(charger).toHaveProperty("durability")
     })
   })
-  test("All chargers should have a recharge rate", () => {
+  test("All chargers should have stats", () => {
     chargers.forEach((charger) => {
-      expect(charger.recharge).toHaveProperty("rate")
+      expect(charger).toHaveProperty("stats")
     })
   })
-  test("All chargers should have a recharge efficency", () => {
-    chargers.forEach((charger) => {
-      expect(charger.recharge).toHaveProperty("efficency")
-    })
-  })
+
 })
