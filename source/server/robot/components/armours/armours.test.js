@@ -1,5 +1,5 @@
 import armours from "./index"
-import { ARMOUR } from "./../../../../common/component-types"
+import * as type from "./../../../../common/component-types"
 
 describe("source/robot/components/armours/index.js", () => {
   test("All armours should have an id", () => {
@@ -9,7 +9,7 @@ describe("source/robot/components/armours/index.js", () => {
   })
   test("All armours should have a type equal to ARMOUR", () => {
     armours.forEach((armour) => {
-      expect(armour.type).toEqual(ARMOUR)
+      expect(armour.type).toEqual(type.ARMOUR)
     })
   })
   test("All armours should have a name", () => {
@@ -27,9 +27,9 @@ describe("source/robot/components/armours/index.js", () => {
       expect(armour).toHaveProperty("durability")
     })
   })
-  test("All armours should have a weight", () => {
+  test("All armours should have stats", () => {
     armours.forEach((armour) => {
-      expect(armour).toHaveProperty("weight")
+      expect(armour).toHaveProperty("stats")
     })
   })
 })
