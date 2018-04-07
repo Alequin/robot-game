@@ -8,6 +8,7 @@ describe("source/server/robot/components/stats/stats.js", () => {
       [stats.WEIGHT]: 0,
       [stats.AGILITY]: 0,
       [stats.BATTERY_CHARGE_RATE]: 0,
+      [stats.BATTERY_EFFICIENCY]: 0,
       [stats.BATTERY_CAPACITY]: 0
     }
     const actual = newStats()
@@ -22,6 +23,7 @@ describe("source/server/robot/components/stats/stats.js", () => {
         [stats.WEIGHT]: 25,
         [stats.AGILITY]: 0,
         [stats.BATTERY_CHARGE_RATE]: 0,
+        [stats.BATTERY_EFFICIENCY]: 0,
         [stats.BATTERY_CAPACITY]: 0
       }
       const actual = newStats({
@@ -39,12 +41,14 @@ describe("source/server/robot/components/stats/stats.js", () => {
         [stats.WEIGHT]: 0,
         [stats.AGILITY]: 100,
         [stats.BATTERY_CHARGE_RATE]: 50,
+        [stats.BATTERY_EFFICIENCY]: 200,
         [stats.BATTERY_CAPACITY]: 25
       }
       const actual = newStats({
         [stats.AGILITY]: 100,
         [stats.BATTERY_CHARGE_RATE]: 50,
         [stats.BATTERY_CAPACITY]: 25,
+        [stats.BATTERY_EFFICIENCY]: 200,
       })
       expect(actual).toEqual(expected)
     })

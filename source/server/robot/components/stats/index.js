@@ -4,6 +4,7 @@ export const stats = Object.freeze({
     WEIGHT: "Weight",
     AGILITY: "Agility",
     BATTERY_CHARGE_RATE: "Battery charge rate",
+    BATTERY_EFFICIENCY: "Battery efficiency",
     BATTERY_CAPACITY: "Battery capacity"
 })
 
@@ -15,6 +16,7 @@ export const newStats = (initalStats = {}) => {
     [stats.WEIGHT]: weight,
     [stats.AGILITY]: agility,
     [stats.BATTERY_CHARGE_RATE]: batteryChargeRate,
+    [stats.BATTERY_EFFICIENCY]: batteryEfficiency,
     [stats.BATTERY_CAPACITY]: batteryCapacity
   } = initalStats
 
@@ -24,6 +26,7 @@ export const newStats = (initalStats = {}) => {
     [stats.WEIGHT]: weight || 0,
     [stats.AGILITY]: agility || 0,
     [stats.BATTERY_CHARGE_RATE]: batteryChargeRate || 0,
+    [stats.BATTERY_EFFICIENCY]: batteryEfficiency || 0,
     [stats.BATTERY_CAPACITY]: batteryCapacity || 0
   }
 }
