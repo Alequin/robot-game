@@ -7,11 +7,6 @@ describe("source/robot/components/chassies/index.js", () => {
       expect(chassy).toHaveProperty("id")
     })
   })
-  test("All chassis should have a type equal to CHASSY", () => {
-    chassis.forEach((chassy) => {
-      expect(chassy.type).toEqual(CHASSY)
-    })
-  })
   test("All chassis should have a name", () => {
     chassis.forEach((chassy) => {
       expect(chassy).toHaveProperty("name")
@@ -37,34 +32,9 @@ describe("source/robot/components/chassies/index.js", () => {
       expect(chassy).toHaveProperty("componentCapacity")
     })
   })
-  test("All chassis should have a total weight", () => {
+  test("All chassis should have a stats", () => {
     chassis.forEach((chassy) => {
-      expect(chassy.stats).toHaveProperty("totalWeight")
-    })
-  })
-  test("All chassis should have an armour rating", () => {
-    chassis.forEach((chassy) => {
-      expect(chassy.stats).toHaveProperty("armour")
-    })
-  })
-  test("All chassis should have an shield rating", () => {
-    chassis.forEach((chassy) => {
-      expect(chassy.stats).toHaveProperty("shield")
-    })
-  })
-  test("All chassis should have an speed rating", () => {
-    chassis.forEach((chassy) => {
-      expect(chassy.stats).toHaveProperty("speed")
-    })
-  })
-  test("All chassis should have an battery charge rate", () => {
-    chassis.forEach((chassy) => {
-      expect(chassy.stats).toHaveProperty("batteryChargeRate")
-    })
-  })
-  test("All chassis should have an battery battery capacity", () => {
-    chassis.forEach((chassy) => {
-      expect(chassy.stats).toHaveProperty("batteryCapacity")
+      expect(chassy).toHaveProperty("stats")
     })
   })
 })

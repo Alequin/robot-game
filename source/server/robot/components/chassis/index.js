@@ -1,23 +1,26 @@
-import {CHASSY} from "./../../../../common/component-types"
+import stats from "./../stats/stats"
+import newStats from "./../stats/new-stats"
 
 const chassis = [
-  {
+  newChassy({
     id: 1,
-    type: CHASSY,
     name: "Small Chassy",
     description: "A small chassy with a few component slots",
     baseWeight: 50,
-    components:[],
     componentCapacity: 4,
-    stats: {
-      armour: 0,
-      shield: 0,
-      totalWeight: 50,
-      speed: 0,
-      batteryChargeRate: 1,
-      batteryCapacity: 100,
-    }
-  }
+  })
 ]
+
+function newChassy({id, name, description, baseWeight, componentCapacity}){
+  return {
+    id,
+    name,
+    description,
+    componentCapacity,
+    components: [],
+    baseWeight: baseWeight,
+    stats: newStats([stats.WEIGHT]: baseWeight)
+  }
+}
 
 export default chassis
