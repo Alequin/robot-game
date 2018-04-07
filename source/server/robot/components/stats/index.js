@@ -4,7 +4,7 @@ export const stats = Object.freeze({
     AGILITY: "Agility",
 
     SHIELD_CHARGE_RATE: "Shield charge rate",
-    SHIELD_EFFICIENCY: "Shield efficiency",
+    SHIELD_CHARGE_EFFICIENCY: "Shield efficiency",
     SHIELD_CAPACITY: "Shield capacity",
 
     BATTERY_CHARGE_RATE: "Battery charge rate",
@@ -20,7 +20,7 @@ export const newStats = (initalStats = {}) => {
     [stats.AGILITY]: agility,
 
     [stats.SHIELD_CHARGE_RATE]: shieldChargeRate,
-    [stats.SHIELD_EFFICIENCY]: shieldEfficiency,
+    [stats.SHIELD_CHARGE_EFFICIENCY]: shieldEfficiency,
     [stats.SHIELD_CAPACITY]: shieldCapacity,
 
     [stats.BATTERY_CHARGE_RATE]: batteryChargeRate,
@@ -34,7 +34,7 @@ export const newStats = (initalStats = {}) => {
     [stats.AGILITY]: agility || 0,
 
     [stats.SHIELD_CHARGE_RATE]: shieldChargeRate || 0,
-    [stats.SHIELD_EFFICIENCY]: shieldEfficiency || 0,
+    [stats.SHIELD_CHARGE_EFFICIENCY]: shieldEfficiency || 0,
     [stats.SHIELD_CAPACITY]: shieldCapacity || 0,
 
     [stats.BATTERY_CHARGE_RATE]: batteryChargeRate || 0,

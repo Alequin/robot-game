@@ -11,7 +11,7 @@ const shields = [
     stats: newStats({
       [stats.SHIELD_CAPACITY]: 100,
       [stats.SHIELD_CHARGE_RATE]: 10,
-      [stats.SHIELD_EFFICIENCY]: 2,
+      [stats.SHIELD_CHARGE_EFFICIENCY]: 2,
     })
   }
 ]

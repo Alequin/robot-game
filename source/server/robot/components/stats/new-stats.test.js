@@ -8,7 +8,7 @@ describe("source/server/robot/components/stats/stats.js", () => {
       [stats.AGILITY]: 0,
 
       [stats.SHIELD_CHARGE_RATE]: 0,
-      [stats.SHIELD_EFFICIENCY]: 0,
+      [stats.SHIELD_CHARGE_EFFICIENCY]: 0,
       [stats.SHIELD_CAPACITY]: 0,
 
       [stats.BATTERY_CHARGE_RATE]: 0,
@@ -27,7 +27,7 @@ describe("source/server/robot/components/stats/stats.js", () => {
         [stats.AGILITY]: 50,
 
         [stats.SHIELD_CHARGE_RATE]: 0,
-        [stats.SHIELD_EFFICIENCY]: 0,
+        [stats.SHIELD_CHARGE_EFFICIENCY]: 0,
         [stats.SHIELD_CAPACITY]: 0,
 
         [stats.BATTERY_CHARGE_RATE]: 0,
@@ -51,7 +51,7 @@ describe("source/server/robot/components/stats/stats.js", () => {
         [stats.AGILITY]: 0,
 
         [stats.SHIELD_CHARGE_RATE]: 100,
-        [stats.SHIELD_EFFICIENCY]: 50,
+        [stats.SHIELD_CHARGE_EFFICIENCY]: 50,
         [stats.SHIELD_CAPACITY]: 20,
 
         [stats.BATTERY_CHARGE_RATE]: 0,
@@ -60,7 +60,7 @@ describe("source/server/robot/components/stats/stats.js", () => {
       }
       const actual = newStats({
         [stats.SHIELD_CHARGE_RATE]: 100,
-        [stats.SHIELD_EFFICIENCY]: 50,
+        [stats.SHIELD_CHARGE_EFFICIENCY]: 50,
         [stats.SHIELD_CAPACITY]: 20,
       })
       expect(actual).toEqual(expected)
@@ -74,7 +74,7 @@ describe("source/server/robot/components/stats/stats.js", () => {
         [stats.AGILITY]: 0,
 
         [stats.SHIELD_CHARGE_RATE]: 0,
-        [stats.SHIELD_EFFICIENCY]: 0,
+        [stats.SHIELD_CHARGE_EFFICIENCY]: 0,
         [stats.SHIELD_CAPACITY]: 0,
 
         [stats.BATTERY_CHARGE_RATE]: 100,
