@@ -1,5 +1,5 @@
 import weapons from "./index"
-import {WEAPON} from "./../../../../common/component-types"
+import * as type from "./../../../../common/component-types"
 
 describe('source/robot/components/weapons/index.js', () => {
   test("All weapons should have an id", () => {
@@ -9,7 +9,7 @@ describe('source/robot/components/weapons/index.js', () => {
   })
   test("All weapons should have a type equal to WEAPON", () => {
     weapons.forEach((weapon) => {
-      expect(weapon.type).toEqual(WEAPON)
+      expect(weapon.type).toEqual(type.WEAPON)
     })
   })
   test("All weapons should have a name", () => {
@@ -27,9 +27,9 @@ describe('source/robot/components/weapons/index.js', () => {
       expect(weapon).toHaveProperty("durability")
     })
   })
-  test("All weapons should have a weight", () => {
+  test("All weapons should have stats", () => {
     weapons.forEach((weapon) => {
-      expect(weapon).toHaveProperty("weight")
+      expect(weapon).toHaveProperty("stats")
     })
   })
   test("All weapons should have a baseDamage", () => {

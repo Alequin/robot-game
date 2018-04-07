@@ -1,14 +1,14 @@
-import {WHEELS} from "./../../../../common/component-types"
+import * as type from "./../../../../common/component-types"
+import {stats, newStats} from "./../stats"
 
 const wheels = [
   {
     id: 1,
-    type: WHEELS,
+    type: type.WHEELS,
     name: "Small Wheels",
     description: "Basic light weight wheels",
     durability: 100,
-    weight: 5,
-    speed: 10
+    stats: newStats({[stats.WEIGHT]: 10, [stats.AGILITY]: 20})
   }
 ]
 

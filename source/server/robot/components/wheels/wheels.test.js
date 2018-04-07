@@ -1,5 +1,5 @@
 import wheels from "./index"
-import {WHEELS} from "./../../../../common/component-types"
+import * as type from "./../../../../common/component-types"
 
 describe("source/robot/components/wheels/index.js", () => {
   test("All wheels should have an id", () => {
@@ -9,7 +9,7 @@ describe("source/robot/components/wheels/index.js", () => {
   })
   test("All wheels should have a type of wheels", () => {
     wheels.forEach((wheel) => {
-      expect(wheel.type).toEqual(WHEELS)
+      expect(wheel.type).toEqual(type.WHEELS)
     })
   })
   test("All wheels should have a name", () => {
@@ -27,14 +27,9 @@ describe("source/robot/components/wheels/index.js", () => {
       expect(wheel).toHaveProperty("durability")
     })
   })
-  test("All wheels should have a weight", () => {
+  test("All wheels should have stats", () => {
     wheels.forEach((wheel) => {
-      expect(wheel).toHaveProperty("weight")
-    })
-  })
-  test("All wheels should have a speed", () => {
-    wheels.forEach((wheel) => {
-      expect(wheel).toHaveProperty("speed")
+      expect(wheel).toHaveProperty("stats")
     })
   })
 })
