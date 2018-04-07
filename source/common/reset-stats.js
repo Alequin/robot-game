@@ -1,16 +1,13 @@
 import mapValues from "lodash/mapValues"
+import set from "lodash/fp/set"
 import flow from "lodash/flow"
+import {stats, newStats} from "./../server/robot/components/stats"
 
 function resetStats(robot){
-  const {chassy: {stats}} = robot
-  robot.chassy.stats = mapValues(stats, () => 0)
+  robot.chassy.stats = newStats({
+    [stats.WEIGHT]: robot.chassy.baseWeight
+  })
   return robot
 }
 
-function applyBaseWeight(robot){
-  const {chassy} = robot
-  chassy.stats.totalWeight = chassy.stats.totalWeight + chassy.baseWeight
-  return robot
-}
-
-export default flow(resetStats, applyBaseWeight)
+export default resetStats

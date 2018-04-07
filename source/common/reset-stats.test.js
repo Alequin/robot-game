@@ -1,4 +1,5 @@
 import resetStats from "./reset-stats"
+import {stats, newStats} from "./../server/robot/components/stats"
 
 describe("source/common/reset-stats.js", () => {
 
@@ -10,28 +11,18 @@ describe("source/common/reset-stats.js", () => {
         components: [],
         baseWeight: 50,
         componentCapacity: 4,
-        stats: {
-          armour: 0,
-          shield: 0,
-          totalWeight: 50,
-          speed: 0,
-          batteryChargeRate: 1,
-          batteryCapacity: 100,
-        }
+        stats: newStats({
+          [stats.WEIGHT]: "bad value",
+          [stats.ARMOUR]: "bad value",
+          wrong: "bad value"
+        })
       }
     }
   })
 
   test("should set all stats to zero and apply the base weight", () => {
-    const expected = {
-      armour: 0,
-      shield: 0,
-      totalWeight: 50,
-      speed: 0,
-      batteryChargeRate: 0,
-      batteryCapacity: 0,
-    }
-    const {chassy: {stats}} = resetStats(mockRobot)
-    expect(stats).toEqual(expected)
+    const expected = newStats({[stats.WEIGHT]: 50})
+    const {chassy} = resetStats(mockRobot)
+    expect(chassy.stats).toEqual(expected)
   })
 })
